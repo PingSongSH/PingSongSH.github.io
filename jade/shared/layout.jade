@@ -1,0 +1,45 @@
+﻿doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='charset' content='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    link(rel='shortcut icon' href='#{imgpre}/ico on tab.ico' type='image/x-icon')
+    link(rel='icon' href='#{imgpre}/ico on tab.ico' type='image/ico')
+    title Pingsong Design
+    link(rel='stylesheet' href='/libs/slick.css')
+    link(rel='stylesheet' href='/libs/slick-theme.css')
+    link(rel='stylesheet' href='/site/css/all.css')
+    script(src='/libs/jquery.min.js')
+    script(src='/libs/slick.min.js')
+    script(src='/site/js/built.min.js')
+  body
+    div#header.col-12
+        if home
+            div#banner.left Ping Song
+        else
+            a#banner_back.left(href='/' style='background-color: #2a2a2a;')
+                img(src='#{imgpre}/home page icon-11.png')
+        div#topnav.right.relpos
+            div#topnav_flatpanel
+                a(href='/') Home
+                a(href='/#design') Works
+                a(href='/about') About
+                a(href='/about#contact') Contact
+            div#topnav_panel
+                div.hyper-link
+                    a(href='/') Home
+                div.hyper-link
+                    a(href='/#design') Works
+                div.hyper-link
+                    a(href='/about') About
+                div.hyper-link
+                    a(href='/about#contact') Contact
+        script.
+            var t = $('#topnav_trigger'), p = $('#topnav_panel');
+            p.bind('click', function(e){e.stopPropagation();});;
+            t.bind('click', function(e){ p.toggleClass('expanded'); e.stopPropagation(); });
+            p.find('a').bind('click', function(){p.removeClass('expanded');});
+            $(document).bind('click', function(){p.removeClass('expanded');});
+    block body
+    include ./footer

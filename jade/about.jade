@@ -1,0 +1,127 @@
+﻿extends ./shared/layout
+
+block body
+    div.col-12.relpos(style='overflow: hidden;')
+        img#about_bg.col-12(src='#{imgpre}/about/banner for about (full size)-small.jpg')
+    div#about_panel
+        div.about-panel-item
+            div.about-panel-item-inner
+                a(href='/about#experience')
+                    img(src='#{imgpre}/icons/experience.png')
+        div.about-panel-item
+            div.about-panel-item-inner
+                a(href='/about#contact')
+                    img(src='#{imgpre}/icons/contact.png')
+        div.about-panel-item
+            div.about-panel-item-inner
+                a(href='/site/docs/resume-pingsong.pdf' target='_blank')
+                    img(src='#{imgpre}/icons/resume.png')
+    div#about_panel_2
+        div#about_panel_2_inner
+            div#about_panel_2_content
+                a(href='/about#experience') Experience
+                span.about-panel-2-split |
+                a(href='/about#contact') Contact
+                span.about-panel-2-split |
+                a(href='/site/docs/resume-pingsong.pdf' target='_blank') Resume
+    div#about_main.col-12.relpos.main-area
+        a(name='experience')
+        div#about_experience_title.col-12 Experience
+        div#about_ms_experience.about-experience.col-12
+            div#about_ms_experience_line1
+                img(src='#{imgpre}/about/MSFT_logo_png.png')
+                div#about_ms_jobtitle User Experience Designer II
+            script.
+                var rs0 = function(){
+                    $('#about_ms_experience_line1').css('top', 'auto');
+                    if(window.innerWidth > 920) {
+                        var t = $('#about_ms_experience').height(), ti = $('#about_ms_experience_line1').height();
+                        $('#about_ms_experience_line1').css('top', (t-ti)/2 + 'px');
+                    }
+                };
+                setTimeout(rs0);
+                $(window).on('resize', rs0);
+            div#about_ms_experience_line2
+                div#about_ms_experience_line2_1.about-experience-title Lead UX designer in Microsoft, 7+ years hands-on experienced in cloud service, commerce platform, universal store, applications of mobile device, computer software, internet products and mordern apps.
+                div#about_ms_experience_line2_2.about-experience-content
+                    div Well-experienced for user centered design methodologies and working on desktop software, cloud service websites, tools and windows 8 apps by delivering compelling and delightful UX design.
+                    div Excellent skillsets in interaction design ( scenario definition, storyboard, information architecture, wireframe click-through ) and visual design (grid system, color palette, typography and redlines ); skilled on html/CSS for website UI prototype.
+                    div Passion on design and innovation; eager to learn new technology and fresh design trends; with strong motivation to drive results for delivering desired and innovative user experience.
+                    div Confident and efficient communication skills both in verbal and written; outstanding leadership as the lead designer to collaborate with both local and headquarters teams for shipping global products.
+                div#about_ms_experience_line2_3.about-experience-title
+                    span more
+                div#about_ms_experience_line2_4.about-experience-title
+                    span less
+                script.
+                    $('#about_ms_experience_line2_3 span, #about_ms_experience_line2_4 span').on('click', function(){$('#about_ms_experience_line2').toggleClass('more');$('body').scrollTop($('#about_ms_experience_line2').offset().top);});
+        div.col-12
+            div.about-other-experience.first2.aleft
+                div.about-experience
+                    div.about-experience-title.text-center expertise
+                    div.about-experience-content User Experience Design, User-centered Design, Branding Identify, Out-of-box Thinking, Information Architecture, Web/PC/Mobile Product Design, Modern Design, Interaction Design, Graphic Design, Color Palette, Typography, Html/CSS, Storyboarding, Wireframes, Agile Usability Testing,
+            div.about-other-experience.first2.amiddle
+                div.about-experience
+                    div.about-experience-title.text-center patents
+                    div.about-experience-content
+                        div 331251.01
+                        div Graphical programming object population user interface auto-generation
+                        div(style='margin-top: 5px;') 334448.01
+                        div Graphic flow having unlimited number of connections between shapes
+            div.about-other-experience.aright
+                div.about-experience
+                    div.about-experience-title.text-center education
+                    div.about-experience-content
+                        div.text-center
+                            img(src='#{imgpre}/icons/tongji.png')
+                        div.text-center
+                            span Master of Art Design
+                        div.text-center(style='margin-top:20px;')
+                            img(src='#{imgpre}/icons/shiyou.png')
+                        div.text-center
+                            span Bachelor of Industry Design
+            script.
+                var rs = function() {
+                    $('.about-other-experience').css('height', 'auto');
+                    if(window.innerWidth > 520 && window.innerWidth <= 920) {
+                        var maxH = 0;
+                        $('.about-other-experience.first2').each(function () {
+                            if($(this).outerHeight() > maxH)
+                                maxH = $(this).outerHeight();
+                        });
+                        $('.about-other-experience.first2').css('height', maxH + 'px');
+                    }
+                    else if(window.innerWidth > 920) {
+                        var maxH = 0;
+                        $('.about-other-experience').each(function () {
+                            if($(this).outerHeight() > maxH)
+                                maxH = $(this).outerHeight();
+                        });
+                        $('.about-other-experience').css('height', maxH + 'px');
+                    }
+                }
+                $(window).on('resize', rs);
+                rs();
+        a(name='contact')
+        div#contact_title.col-12 Contact
+        div.col-12(style='text-align: center; margin-top: 60px;')
+            a.contact-method-logo(href='mailto://songping2500651@hotmail.com')
+                img.whennohover(src='#{imgpre}/icons/home page icon-18.png')
+                img.whenhover(src='/site/image/icons/home page icon-43-hover.png')
+        div.col-12.contact-method-desc songping2500651@hotmail.com
+        div.col-12(style='text-align: center; margin-top: 60px;')
+            a.contact-method-logo(href='https://www.facebook.com/ping.song.56' target='_blank')
+                img.whennohover(src='#{imgpre}/icons/home page icon-19.png')
+                img.whenhover(src='/site/image/icons/home page icon-44-hover.png')
+        div.col-12.contact-method-desc songping2500651@hotmail.com
+        div.col-12(style='text-align: center; margin-top: 60px;')
+            a.contact-method-logo(href='https://www.linkedin.com/profile/view?id=56342085&trk=hp-identity-photo' target='_blank')
+                img.whennohover(src='#{imgpre}/icons/home page icon-20.png')
+                img.whenhover(src='/site/image/icons/home page icon-45-hover.png')
+        div.col-12.contact-method-desc songping2500651@hotmail.com
+        div.col-12(style='text-align: center; margin-top: 60px;')
+            span.contact-method-logo
+                img.whennohover(src='#{imgpre}/icons/home page icon-21.png')
+                img.whenhover(src='/site/image/icons/home page icon-46-hover.png')
+        div#contact_qrcode.col-12
+            img(src='#{imgpre}/icons/wechat.png')
+        include ./shared/thx

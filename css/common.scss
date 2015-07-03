@@ -1,0 +1,18 @@
+﻿
+@import 'variables';
+
+.main-area {
+	padding-left: 60px;
+	padding-right: 60px;
+	box-sizing: border-box;
+}
+
+.site-thx {
+	font-size: 20px;
+	color: $font_grey;
+	position: absolute;
+	text-align: center;
+	bottom: 15px;
+	left: 0px;
+	right: 0px;
+}
