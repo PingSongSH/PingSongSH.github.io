@@ -1,0 +1,46 @@
+﻿extends ../shared/layout
+
+block body
+    div.col-12.relpos
+        div.col-12.relpos.design-img-container.overflow-hidden
+            img.design-banner-img.col-12(src='#{imgpre}/WAEP/banner.png')
+            div.design-banner-title.xs-only Microsoft Azure Management Portal
+        div.design-main-start.design-main-area.col-12
+            div.col-12
+                div.design-achivement
+                    img.design-achivement-icon(src='#{imgpre}/introduction.png')
+                    div.design-achivement-title.design-text-title Introduction
+                    div.design-achivement-content.design-text-content Enterprise customers around the world e.g. Coke, GE etc. who purchased Microsoft cloud service will use this portal to check out billing report summary, manage departments, accounts and subscriptions etc.
+                div.design-achivement
+                    img.design-achivement-icon(src='#{imgpre}/chanllenge.png')
+                    div.design-achivement-title.design-text-title Chanllenge
+                    div.design-achivement-content.design-text-content There was an old version but with dense data and very bad discoverability. Customers complained a lot on the poor performance of the portal especially on the complicated table view data for usage summary.
+                div.design-achivement.design-achivement-last
+                    img.design-achivement-icon(src='#{imgpre}/achievement.png')
+                    div.design-achivement-title.design-text-title Achievement
+                    div.design-achivement-content.design-text-content We delivered an innovated data infographic for balance and overage overview and different granularity to generate report; The flat workspace model increased discoverability and learnability
+        div.design-lightgrey-area.design-main-area.col-12.design-area-end0
+            div.design-header.col-12.design-img-container
+                div.design-text-title Workflow
+                div.design-text-content.design-text-sub-title This is the overview of the entire flow, we proposed the flat navigation model and maximized the style consistency for each workspace
+                img.design-header-content(src='#{imgpre}/WAEP/workflow.png')
+            div.design-header.col-12.design-img-container
+                div.design-text-title Prototype
+                div.design-text-content.design-text-sub-title To better communicate with parties on the design concept, we created interactive prototype through adobe muse. it’s very helpful for users to understand the concept earlier and provide feedback for design improvements
+                div.design-header-content.relpos
+                    img(src='#{imgpre}/WAEP/demo-background-01.png')
+                    img(src='#{imgpre}/WAEP/waep.gif' style='position: absolute; top: 10%; left: 10%; width: 60%;')
+            div.design-header.col-12.design-img-container
+                div.design-text-title High Fidelity Mockup
+                div.design-header-content
+                    img.bigonly(src='#{imgpre}/WAEP/hifi/waep-02.png')
+                    img.smallonly(src='#{imgpre}/WAEP/hifi/hifi-1.png')
+                    img.smallonly(src='#{imgpre}/WAEP/hifi/hifi-2.png' style='margin-top: 15px;')
+                    img.smallonly(src='#{imgpre}/WAEP/hifi/hifi-3.png' style='margin-top: 15px;')
+                    img.smallonly(src='#{imgpre}/WAEP/hifi/hifi-4.png' style='margin-top: 15px;')
+        div.design-lightgrey-area.col-12.design-main-end
+            div.design-header.col-12.design-img-container
+                div.design-text-title Redline
+                div.design-text-content.design-text-sub-title We also provided CSS coding to developer directly besides redlines. Open UX bugs after UI implemented
+                img.design-header-content(src='#{imgpre}/WAEP/redline.png')
+        include ../shared/thx

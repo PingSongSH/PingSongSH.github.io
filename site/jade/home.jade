@@ -1,0 +1,33 @@
+﻿extends ./shared/layout
+
+block body
+    div.col-12
+        div.col-12.relpos(style='overflow: hidden;')
+            img#home_bg.col-12.relpos(src='#{imgpre}/home/home page - banner (full picture)-small.jpg')
+            div#home_patch.float-shadow
+                div#home_patch_words
+                    div#home_patch_header I'M A
+                    div#home_patch_content
+                        div DESIGNER,
+                        div INITIATOR,
+                        div COLLABORATOR,
+                        div COMMUNICATOR
+                        div ...
+                a#home_patch_go(href='/about')
+                    img(src='#{imgpre}/home page icon-11.png')
+            div#home_ft.float-shadow
+                div#home_ft_line1 Less, but better
+                div#home_ft_line2 My design philosophy is simple, meaningful and functional. I believe “simple design is the timeless design” and that’s how i translate hunks of pixels and bits into a fresh and compelling human experience.
+        a(name='design')
+        div#design_area.col-12.relpos.main-area
+            each p in pieces
+                div.left.design-item(data-url='#{p.url}' data-type='#{p.type}')
+                    div.design-item-content
+                        img.design-img(src='#{p.src}')
+                        div.design-title #{p.title}
+            include ./shared/thx
+        script.
+            $('.design-item').bind('click', function(){window.location = $(this).data('url');});
+            $('#design_filter_all').bind('click', function(){$('.design-item').show()});
+            $('#design_filter_pc').bind('click', function(){$('.design-item').each(function(){var v= $(this); if(v.data('type') == 'm') v.hide(); else v.show();})});
+            $('#design_filter_mobile').bind('click', function(){$('.design-item').each(function(){var v= $(this); if(v.data('type') == 'm') v.show(); else v.hide();})});
